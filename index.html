@@ -13,15 +13,15 @@
 <body>
     <header
         class="py-4 px-6 flex justify-between items-center border-b border-gray-200 bg-white fixed z-20 right-0 left-0 top-0">
-        <div class="flex items-center space-x-2">
-            <span class="text-gray-900 font-bold text-2xl w-36 text-center">CHIAMAKA NNAKWU</span>
-            <span class="text-gray-800">/ PROJECT MANAGER & WEB DEVELOPER</span>
+        <div class="flex flex-col sm:flex-row sm:items-center space-x-2">
+            <span class="text-gray-900 font-bold text-2xl w-36 sm:text-center">CHIAMAKA NNAKWU</span>
+            <span class="text-gray-800"><span class="hidden sm:block">/</span> PROJECT MANAGER & WEB DEVELOPER</span>
         </div>
-        <div class="flex-1 mx-8">
+        <div class="flex-1 mx-8 hidden sm:block">
             <input type="text" placeholder="Search..."
                 class="w-full max-w-md px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-gray-900">
         </div>
-        <nav>
+        <nav class="hidden sm:block">
             <ul class="flex space-x-6 text-sm font-medium">
                 <li><a href="/index.html" class="text-gray-900 hover:underline">HOME</a></li>
                 <li><a href="/skills.html" class="text-gray-900 hover:underline">SKILLS</a></li>
@@ -29,11 +29,50 @@
                 <li><a href="/contact.html" class="text-gray-900 hover:underline">CONTACT</a></li>
             </ul>
         </nav>
+
+        <div class="block sm:hidden">
+            <button id="menu-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-10 h-10">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+
+            <!-- Mobile Menu Overlay -->
+            <div id="mobile-menu" class="fixed inset-0 z-40 hidden">
+                <div class="absolute inset-0 bg-black bg-opacity-50" id="menu-overlay"></div>
+                <div
+                    class="absolute top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out translate-x-full">
+                    <div class="p-4 flex justify-end">
+                        <button id="close-btn" class="p-2 text-gray-500 hover:text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <nav class="p-4">
+                        <ul class="space-y-4">
+                            <li><a href="#" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Home</a>
+                            </li>
+                            <li><a href="#" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">About</a>
+                            </li>
+                            <li><a href="#" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Services</a>
+                            </li>
+                            <li><a href="#" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <section id="about" class="py-16 bg-[#f5ece5] relative">
-        <div class="absolute bg-white w-2/3 h-full right-0"></div>
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center pt-16 justify-center gap-8">
+    <section id="about" class="py-4 sm:py-16 bg-[#E6DACE] relative">
+        <div class="absolute bg-white sm:w-2/3 top-0 bottom-0 right-0 left-0 sm:left-auto"></div>
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center pt-24 sm:pt-16 justify-center gap-8">
             <!-- Profile Card -->
             <div class="relative bg-white rounded-lg shadow-md p-6 w-full md:w-80 mb-8 md:mb-0">
                 <img src="assets/images/portfolio-image.jpg" alt="Profile Photo"
@@ -111,8 +150,8 @@
                             Professional Experience
                         </h4>
                         <P>
-                            Project/Product Manager - Volunteer, Int+ Technology.
-                            Project Manager/Scrum Master - Intern, Interswitch Group Ltd, Lagos.
+                            Project/Product Manager - Int+ Technology.
+                            Project Manager/Scrum Master - Interswitch Group Ltd, Lagos.
                         </P>
                     </div>
                 </div>
@@ -162,7 +201,7 @@
                 <div>
                     <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="home.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
                         <li><a href="skills.html" class="hover:text-white transition">Skills</a></li>
                         <li><a href="projects.html" class="hover:text-white transition">Projects</a></li>
                         <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
@@ -205,6 +244,7 @@
         </div>
     </footer>
 
+    <script src="./assets/script.js"></script>
 </body>
 
 </html>
